@@ -1,0 +1,122 @@
+* {
+  padding: 2px;
+  margin: 3px;
+  box-sizing: border-box;
+  font-family: 'Calibri', sans-serif;
+}
+
+a {
+  background-color: rgb(139, 0, 116);
+  font-family: 'Calibri', sans-serif;
+  color: antiquewhite;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 1px;
+}
+
+body {
+  background-image: url('färgkurvor.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(31, 199, 199);
+}
+
+.väljare {
+  box-sizing: content-box;
+  width: 80vmin;
+  position: static;
+  padding-left: 60px;
+  padding: 50px 40px;
+  text-align: center;
+  align-content: center;
+  align-self: center;
+  justify-content: space-evenly;
+  justify-items: center;
+  justify-self: center;
+  color: rgb(12, 11, 10);
+  font-size: 25px;
+  margin: 60px;
+  padding: 5px;
+  background-color: rgba(79, 194, 100, 0.813);
+  border-radius: 15px;
+  border-color: rgb(19, 2, 2);
+  border: solid;
+}
+
+.wrapper {
+  width: 80vmin;
+  padding: 50px 40px;
+  background-color: rgba(240, 136, 52, 0.813);
+  position: absolute;
+  box-sizing: content-box;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  align-self: center;
+  border-radius: 20px;
+  border: solid brown;
+  box-shadow: 20px 20px 40px rgba(97, 63, 0, 0.4);
+}
+
+span {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-self: start;
+  justify-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 50px;
+}
+
+p {
+  font-size: 25px;
+  color: #141305;
+  font-weight: 400;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 20px;
+  margin: 30px 0;
+}
+
+#setup {
+  justify-content: flex-start;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+#delivery {
+  justify-content: flex-start;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  background-color: rgb(222, 222, 135);
+  border: solid;
+  border-color: chocolate;
+  padding: 5px;
+  font-size: 25px;
+  color: black;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 25px;
+  margin: 0 auto;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SKALL ENDAST VISA TEXT */
+@media screen and (max-width: 400px) {
+  span {
+    display: none;
+  }
+
+  body {
+    background-image: none;
+    background-color: rgb(31, 199, 199);
+  }
+}

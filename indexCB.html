@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lediga Cyklar i Göteborg, Styr & Ställ</title>
+  <link rel="stylesheet" href="indexCB.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+  <style>
+    .container {
+      position: absolute;
+    }
+
+    .bottomright {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+      font-size: 18px;
+    }
+
+    .img {
+      width: 100%;
+      height: auto;
+      opacity: 0.4;
+    }
+
+    body {
+      margin-top: 10%;
+      backface-visibility: visible;
+      background-image: url('bicycle.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      mask-position: center bottom;
+      position: absolute;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html">To Main Page</a>
+
+  <h1>Lediga Cyklar i Göteborg</h1>
+  <h1>Styr & Ställ </h1>
+
+  <input id="button" type="button" value="Sök">
+
+
+  <input type="text" placeholder="PLATS / GATUNAMN">
+  <div id="plats" style="background-color: antiquewhite; border: solid black;">
+    <p>
+
+    </p>
+  </div>
+
+  <script>
+    const name = document.querySelector('#name')    //GATUNAMN ELLER PLATS
+    const button = document.querySelector('#button')
+    const result = document.querySelector('#plats')
+    const resultBox = document.querySelector('#resultBox')                                   //LISTA
+
+    document.querySelector('#button').addEventListener('click', () => {
+      getPlats();
+      console.log("result: " + result[i].name).value
+    })
+    let plats = ""
+    function getPlats() {
+      fetch('https://community-citybikes.p.rapidapi.com/styr-staell-goeteborg.json?rapidapi-key=c9267e18ccmshee40395437ca666p1992afjsnb01c49b0bbcc')
+        // fetch('https://community-citybikes.p.rapidapi.com/networks.json?rapidapi-key=c9267e18ccmshee40395437ca666p1992afjsnb01c49b0bbcc')
+        .then((data) => data.json())
+        .then(result => {
+          plats = result;
+          console.log("result: " + result[0].name);
+          let div = document.querySelector('#plats')
+          // console.log("result: " + result.length);
+          for (let i = 0; i < result.length; i++) {
+            div.innerHTML += "<p>" + result[i].name + "</p>";
+          }
+        })
+
+        .catch(error => {
+          console.error('Sorry, something went wrong!' + error);
+        });
+    }
+    button.addEventListener("click", getPlats);
+
+  </script>
+  <script src="indexCB.js"></script>
+
+</body>
+</html>

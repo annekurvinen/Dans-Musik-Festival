@@ -1,0 +1,31 @@
+* {
+  font-family: 'FiraSans-Regular', Arial, Helvetica, sans-serif;
+  color: rgb(31, 28, 28);
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  align-self: auto;
+  margin: 20px 40px;
+}
+
+fieldset {
+  margin-top: 25px;
+  margin-left: 5px;
+  padding: 4px;
+}
+
+.form {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-self: auto;
+}
+
+footer {
+  font-size: 8px;
+  text-align: right;
+}

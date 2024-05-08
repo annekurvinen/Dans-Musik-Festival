@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote</title>
+  <link rel="stylesheet" href="indexQ.css">
+  <link rel="stylesheet" href="buttonRipple.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+  <a href="/Project Labb2/Bilder/wood-wall.png" img src="wood-wall.png" alt="trävägg av timmerstockar"></a>
+</head>
+<body>
+
+  <a href="index.html">To Main Page</a>
+
+  </div>
+
+  <div class="wrapper">
+    <div class="container">
+      <h1>Random Quotes</h1>
+      <p id="quote">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit dicta est adipisci non optio! Excepturi deserunt
+        modi numquam. Repellendus provident sed laboriosam animi, soluta hic in doloribus veniam iure eveniet.
+      </p>
+
+
+      <h3 id="author">Lorem, ipsum.</h3>
+
+
+      <button id="btn">Get A Random Quote</button>
+    </div>
+  </div>
+
+  <script>
+    const content = document.querySelector('#quote');
+    const name = document.querySelector('#author');
+    const btn = document.querySelector('#btn')
+    const authorSlug = "https://www.wikiwand.com/en/'#authorSlug";
+    const url = "https://api.quotable.io/random";
+
+    function getQuote() {
+      fetch(url)
+        .then((data) => data.json())
+        .then((item) => {
+          quote.innerText = item.content;
+          author.innerText = item.author;
+        })
+        .catch(error => {
+          console.error('Sorry, something went wrong!' + error);
+        });
+    };
+
+    window.addEventListener("load", getQuote);
+    btn.addEventListener("click", getQuote);
+
+    author.addEventListener('click', () => {
+      getSelection.name = url('https://www.wikiwand.com/en/' + '#author')
+      author.innerText = item.auth;
+    })
+
+  </script>
+  </div>
+  <script src="indexQ.js"></script>
+</body>
+</html>

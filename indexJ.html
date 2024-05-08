@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramdom Jokes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap">
+  <link rel="stylesheet" href="indexJ.css">
+  <a href="/Project Labb2/färgkurvor.jpg" img src="färgkurvor.jpg" alt="färgkurvor"></a>
+  <script src="indexJ.js"></script>
+</head>
+<body>
+  <a href="index.html">To Main Page</a>
+
+  <div class="väljare" style="font-size: 25px; text-align: left;">
+    <label for="categories">Choose A Category: </label>
+    <select id="categories" name="categories" style="font-size: 20px;">
+      <option value="Any" selected>Any</option>
+      <option value="Misc">Miscellaneous</option>
+      <option value="Programming">Programming</option>
+      <option value="Dark">Dark</option>
+      <option value="Pun">Pun</option>
+      <option value="Spooky">Spooky</option>
+      <option value="Christmas">Christmas</option>
+    </select>
+
+    <div class="wrapper">
+      <span> &#128513 &#128517 &#128512 &#128514</span>
+
+      <p id="setup">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptatum inventore nisi asperiores,
+        hic quae? </p>
+
+      <p id="delivery"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum nobis sed, illo quam non iste.
+      </p>
+
+      <button id="btn" type="button">Get A Random Joke</button>
+
+    </div>
+  </div>
+
+  <script>
+
+    // const categories = document.querySelector('#categories');
+    const option = document.querySelector('option');
+    const setupContainer = document.querySelector('#setup');
+    const delivery = document.querySelector('#delivery');
+    const button = document.querySelector('#btn');
+    getSetup()
+    document.querySelector('option').addEventListener('onselect', () => {
+      categories = document.querySelector('option').value
+      getSetup();
+    });
+
+    document.querySelector('#btn').addEventListener('click', () => {
+      getSetup();
+    });
+
+
+
+    function getSetup() {
+      const categories = document.getElementById('categories').value
+      console.log('categories' + categories)
+      fetch('https://jokeapi-v2.p.rapidapi.com/joke/categories?rapidapi-key=c9267e18ccmshee40395437ca666p1992afjsnb01c49b0bbcc')
+        .then((r) => { return r.json() })
+        .then(result => {
+
+        }),
+
+        fetch('https://jokeapi-v2.p.rapidapi.com/joke/' + categories + '?rapidapi-key=c9267e18ccmshee40395437ca666p1992afjsnb01c49b0bbcc')
+          .then((r) => { return r.json() })
+          .then(result => {
+            console.log(
+              setupContainer.textContent = (result.setup),
+              delivery.textContent = (result.delivery))
+          });
+
+      try {
+      } catch (error) {
+        console.error('Sorry, something went wrong!' + error);
+      };
+    };
+
+    window.addEventListener("onselect", getSetup);
+    btn.addEventListener("click", getSetup);
+
+  </script>
+
+  <script src="indexJ.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+a {
+  background-color: rgb(139, 0, 116);
+  font-family: 'Calibri', sans-serif;
+  color: antiquewhite;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 1px;
+}
+
+h1 {
+  display: flex;
+  float: none;
+  flex-flow: wrap;
+  justify-self: unset;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: antiquewhite;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: underline;
+  /* position: fixed, sticky; */
+}
+
+body {
+  background-size: 100%, 100%;
+  background-repeat: repeat;
+  background-image: url('wood-wall.png');
+  background-color: rgb(188, 151, 240);
+}
+
+.wrapper {
+  width: 400px;
+  border-radius: 5px;
+  border: 1px solid;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.container {
+  width: 100%;
+  background-color: rgb(68, 55, 118);
+  padding: 50px 40px;
+  box-shadow: 0 20px 65px rgba(4, 52, 124, 0.2);
+  position: relative;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 120%;
+  border-radius: 5px;
+  background-color: rgb(68, 27, 115);
+  z-index: -1;
+  top: -10%;
+  left: 10%;
+}
+
+.container p {
+  color: rgb(222, 215, 250);
+  line-height: 1.6;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+.container h3 {
+  color: antiquewhite;
+  margin: 20px 0 60px 0;
+  font-weight: 600;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+#author {
+  cursor: pointer;
+  pointer-events: auto;
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+#author :hover {
+  color: black;
+}
+
+#btn {
+  position: relative;
+  background-color: rgb(163, 124, 85);
+  border: solid black;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(44, 34, 22);
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#btn:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+#btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 20px;
+  }
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url('FiraSans-Regular.ttf');
+}
